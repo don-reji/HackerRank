@@ -7,14 +7,29 @@
 
 def kangaroo(x1, v1, x2, v2):
     # Write your code here
+    if x1<x2 and v1 < v2:
+        return 'NO'
+    # if 1st kangaroo starts at a lower location and lower 
+    # jump rate it won't catch upto 2nd
     
-    for i in range(10000):
-        if x1==x2: 
-            return 'YES'
+    else:
+        if v1!=v2 and (x2-x1)%(v2-v1)==0:
+    # if jump rate is same it never will be at same location
+    # 
+            return 'YES'      
         else:
-            x1+=v1
-            x2+=v2
-    return 'NO'
+            return 'NO'
+            
+    # O(1) time
+    
+    # for i in range(10000):
+    #     if x1==x2: 
+    #         return 'YES'
+    #     else:
+    #         x1+=v1
+    #         x2+=v2
+    # return 'NO'
+    # O(n) time 
 
 
 
